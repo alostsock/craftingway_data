@@ -15,7 +15,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "build_ffxiv_recipes"
+name = "craftingway_data"
 version = "0.1.0"
 dependencies = [
  "csv",
