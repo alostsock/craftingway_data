@@ -1,9 +1,7 @@
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
-use std::fs::File;
-use std::io::prelude::*;
 
-use crate::utils::bool_string;
+use crate::utils::{bool_string, write_json_file};
 
 pub fn build_recipes_json() {
     let mut item_csv = csv::Reader::from_path("data/Item.csv").unwrap();
@@ -100,10 +98,7 @@ pub fn build_recipes_json() {
         });
     }
 
-    let json = serde_json::to_string(&recipe_output).unwrap();
-
-    let mut file = File::create("recipes.json").unwrap();
-    file.write_all(&json.into_bytes()).unwrap();
+    write_json_file(&recipe_output, "output/recipes.json");
 }
 
 #[allow(dead_code)]
