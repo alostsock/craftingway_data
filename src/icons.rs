@@ -105,16 +105,17 @@ pub fn build_icons(action_icons_path: &Path) {
         if let Some(icon_data) = icons_by_id.get(&icon_id) {
             let ext = entry.path().extension().unwrap().to_string_lossy();
             // some icons are class-specific, others aren't
-            let filename = if let Some(job) = &icon_data.job {
-                format!("{}-{}.{}", icon_data.name, job, ext)
+            let action_name = if let Some(job) = &icon_data.job {
+                format!("{}-{}", icon_data.name, job)
             } else {
-                format!("{}.{}", icon_data.name, ext)
+                icon_data.name.clone()
             };
+            let filename = format!("{}.{}", action_name, ext);
 
             fs::copy(entry.path(), format!("output/icon/action/{}", filename))
                 .unwrap_or_else(|_| panic!("error copying {:?}", entry.path()));
 
-            action_output.push(filename.clone());
+            action_output.push(action_name);
         }
 
         // copy status icons
@@ -125,7 +126,7 @@ pub fn build_icons(action_icons_path: &Path) {
             fs::copy(entry.path(), format!("output/icon/status/{}", filename))
                 .unwrap_or_else(|_| panic!("error copying {:?}", entry.path()));
 
-            status_output.push(filename.clone());
+            status_output.push(String::from(status_name));
         }
     }
 
