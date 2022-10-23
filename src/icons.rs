@@ -78,7 +78,7 @@ pub fn build_icons(action_icons_path: &Path) {
         }
     }
 
-    let mut action_output: HashMap<String, Vec<String>> = HashMap::new();
+    let mut action_output: Vec<String> = vec![];
     let mut status_output: Vec<String> = vec![];
 
     // iterate through icon files and match them up with action data from above
@@ -114,12 +114,7 @@ pub fn build_icons(action_icons_path: &Path) {
             fs::copy(entry.path(), format!("output/icon/action/{}", filename))
                 .unwrap_or_else(|_| panic!("error copying {:?}", entry.path()));
 
-            action_output
-                .entry(icon_data.name.clone())
-                .and_modify(|filenames| {
-                    filenames.push(filename.clone());
-                })
-                .or_insert_with(|| vec![filename.clone()]);
+            action_output.push(filename.clone());
         }
 
         // copy status icons
