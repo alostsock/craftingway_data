@@ -17,3 +17,6 @@ sed -i '1d;3d' Action.csv
 
 curl https://raw.githubusercontent.com/xivapi/ffxiv-datamining/master/csv/CraftAction.csv > CraftAction.csv
 sed -i '1d;3d' CraftAction.csv
+
+curl https://raw.githubusercontent.com/xivapi/ffxiv-datamining/master/csv/Status.csv > Status.csv
+sed -i '1d;3d' Status.csv

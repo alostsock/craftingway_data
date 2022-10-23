@@ -3,7 +3,7 @@ use std::collections::HashMap;
 
 use crate::utils::{bool_string, write_json_file};
 
-pub fn build_recipes_json() {
+pub fn build_recipes() {
     let mut item_csv = csv::Reader::from_path("data/Item.csv").unwrap();
     let mut recipe_lookup_csv = csv::Reader::from_path("data/RecipeLookup.csv").unwrap();
     let mut recipe_level_csv = csv::Reader::from_path("data/RecipeLevelTable.csv").unwrap();
