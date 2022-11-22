@@ -1,5 +1,7 @@
 use serde::Deserialize;
+use std::collections::hash_map::DefaultHasher;
 use std::fs::File;
+use std::hash::{Hash, Hasher};
 use std::io::prelude::Write;
 
 pub fn bool_string<'de, D>(deserializer: D) -> Result<bool, D::Error>
@@ -22,4 +24,10 @@ where
 
     let mut file = File::create(path).unwrap();
     file.write_all(&json.into_bytes()).unwrap();
+}
+
+pub fn calculate_hash<T: Hash>(t: &T) -> u64 {
+    let mut s = DefaultHasher::new();
+    t.hash(&mut s);
+    s.finish()
 }

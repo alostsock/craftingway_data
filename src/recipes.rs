@@ -1,7 +1,8 @@
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
+use std::hash::{Hash, Hasher};
 
-use crate::utils::{bool_string, write_json_file};
+use crate::utils::{bool_string, calculate_hash, write_json_file};
 
 pub fn build_recipes() {
     let mut item_csv = csv::Reader::from_path("data/Item.csv").unwrap();
@@ -47,7 +48,7 @@ pub fn build_recipes() {
         recipe_levels.insert(recipe_level_record.recipe_level, recipe_level_record);
     }
 
-    let mut recipe_output: Vec<RecipeOutput> = vec![];
+    let mut unique_recipes: HashMap<u64, RecipeOutput> = HashMap::new();
     for record in recipe_csv.deserialize::<RecipeRecord>() {
         let recipe = record.unwrap();
 
@@ -77,7 +78,7 @@ pub fn build_recipes() {
         let quality = calculate_requirement(recipe_level.quality, recipe.quality_factor);
         let durability = calculate_requirement(recipe_level.durability, recipe.durability_factor);
 
-        recipe_output.push(RecipeOutput {
+        let mut recipe_output = RecipeOutput {
             name: item.name.clone(),
             jobs: jobs.iter().map(|&job| String::from(job)).collect(),
             job_level: recipe_level.job_level,
@@ -95,10 +96,22 @@ pub fn build_recipes() {
             is_specialist: recipe.is_spec,
             is_expert: recipe.is_expert,
             conditions_flag: recipe_level.conditions_flag,
-        });
+        };
+
+        let key = calculate_hash(&recipe_output);
+
+        unique_recipes
+            .entry(key)
+            .and_modify(|existing_recipe| {
+                existing_recipe.jobs.append(&mut recipe_output.jobs);
+            })
+            .or_insert(recipe_output);
     }
 
-    write_json_file(&recipe_output, "output/recipes.json");
+    write_json_file(
+        &unique_recipes.into_values().collect::<Vec<RecipeOutput>>(),
+        "output/recipes.json",
+    );
 }
 
 #[allow(dead_code)]
@@ -238,4 +251,43 @@ struct RecipeOutput {
     is_specialist: bool,
     is_expert: bool,
     conditions_flag: u32,
+}
+
+// traits used to dedupe recipes across multiple jobs.
+// this is probably a bit overkill, though
+
+impl PartialEq for RecipeOutput {
+    fn eq(&self, other: &Self) -> bool {
+        self.name == other.name
+            && self.job_level == other.job_level
+            && self.recipe_level == other.recipe_level
+            && self.item_level == other.item_level
+            && self.equip_level == other.equip_level
+            && self.stars == other.stars
+            && self.progress == other.progress
+            && self.quality == other.quality
+            && self.durability == other.durability
+            && self.is_specialist == other.is_specialist
+            && self.is_expert == other.is_expert
+            && self.conditions_flag == other.conditions_flag
+    }
+}
+
+impl Eq for RecipeOutput {}
+
+impl Hash for RecipeOutput {
+    fn hash<H: Hasher>(&self, state: &mut H) {
+        self.name.hash(state);
+        self.job_level.hash(state);
+        self.recipe_level.hash(state);
+        self.item_level.hash(state);
+        self.equip_level.hash(state);
+        self.stars.hash(state);
+        self.progress.hash(state);
+        self.quality.hash(state);
+        self.durability.hash(state);
+        self.is_specialist.hash(state);
+        self.is_expert.hash(state);
+        self.conditions_flag.hash(state);
+    }
 }
