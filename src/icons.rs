@@ -199,6 +199,6 @@ struct StatusRecord {
     #[serde(rename = "MaxStacks")]
     max_stacks: u32,
 
-    #[serde(rename = "manually-identified-category")]
+    #[serde(rename = "ClassJobCategory")]
     category: u32,
 }
