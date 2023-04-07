@@ -54,7 +54,8 @@ pub fn build_consumables() {
         }
     }
 
-    let mut consumables = vec![];
+    let mut meals = vec![];
+    let mut potions = vec![];
     for record in item_csv.deserialize::<ItemRecord>() {
         let item = record.unwrap();
 
@@ -66,18 +67,24 @@ pub fn build_consumables() {
 
             let (craftsmanship, control, cp) = get_stats(item_food);
 
-            consumables.push(ConsumableOutput {
+            let consumable = ConsumableOutput {
                 item_level: item.item_level,
                 name: item.name,
-                is_potion,
                 craftsmanship,
                 control,
                 cp,
-            });
+            };
+
+            if is_potion {
+                potions.push(consumable);
+            } else {
+                meals.push(consumable);
+            }
         }
     }
 
-    write_json_file(&consumables, "output/consumables.json");
+    write_json_file(&meals, "output/meals.json");
+    write_json_file(&potions, "output/potions.json");
 }
 
 #[allow(clippy::type_complexity)]
@@ -129,7 +136,6 @@ struct Consumable {
 struct ConsumableOutput {
     item_level: u32,
     name: String,
-    is_potion: bool,
     craftsmanship: Option<Vec<u32>>,
     control: Option<Vec<u32>>,
     cp: Option<Vec<u32>>,
