@@ -5,11 +5,16 @@
     clippy::cast_sign_loss
 )]
 
-use craftingway_data::{icons::build_icons, recipes::build_recipes};
+use craftingway_data::{
+    consumables::build_consumables, icons::build_icons, recipes::build_recipes,
+};
 
 fn main() {
     println!("Building recipes.json...");
     build_recipes();
+
+    println!("Building consumables.json...");
+    build_consumables();
 
     let args: Vec<String> = std::env::args().collect();
     assert!(args.len() == 2, "Path for action icons wasn't provided");

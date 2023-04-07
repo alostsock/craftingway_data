@@ -1,10 +1,15 @@
-use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::fs;
 use std::path::Path;
 use walkdir::WalkDir;
 
-use crate::utils::{bool_string, write_json_file};
+use crate::models::{ActionRecord, CraftActionRecord, StatusRecord};
+use crate::utils::write_json_file;
+
+struct IconData {
+    pub name: String,
+    pub job: Option<String>,
+}
 
 pub fn build_icons(action_icons_path: &Path) {
     let icons_dir = Path::new("output/icon");
@@ -147,58 +152,4 @@ fn job_string(class_job: i32) -> Option<String> {
         _ => None,
     }
     .map(String::from)
-}
-
-#[derive(Debug, Deserialize, Clone)]
-struct ActionRecord {
-    #[serde(rename = "Name")]
-    name: String,
-
-    #[serde(rename = "Icon")]
-    icon: u32,
-
-    #[serde(rename = "ActionCategory")]
-    action_category: i32,
-
-    #[serde(rename = "ClassJob")]
-    class_job: i32,
-
-    #[serde(rename = "IsPlayerAction")]
-    #[serde(deserialize_with = "bool_string")]
-    is_player_action: bool,
-}
-
-#[derive(Debug, Deserialize, Serialize, Clone)]
-struct CraftActionRecord {
-    #[serde(rename = "#")]
-    id: u32,
-
-    #[serde(rename = "Name")]
-    name: String,
-
-    #[serde(rename = "Icon")]
-    icon: u32,
-
-    #[serde(rename = "ClassJob")]
-    class_job: i32,
-}
-
-struct IconData {
-    name: String,
-    job: Option<String>,
-}
-
-#[derive(Debug, Deserialize, Clone)]
-struct StatusRecord {
-    #[serde(rename = "Name")]
-    name: String,
-
-    #[serde(rename = "Icon")]
-    icon: u32,
-
-    #[serde(rename = "MaxStacks")]
-    max_stacks: u32,
-
-    #[serde(rename = "ClassJobCategory")]
-    category: u32,
 }

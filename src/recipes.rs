@@ -1,8 +1,9 @@
-use serde::{Deserialize, Serialize};
+use serde::Serialize;
 use std::collections::HashMap;
 use std::hash::{Hash, Hasher};
 
-use crate::utils::{bool_string, calculate_hash, write_json_file};
+use crate::models::{ItemRecord, RecipeLevelRecord, RecipeLookupRecord, RecipeRecord};
+use crate::utils::{calculate_hash, write_json_file};
 
 pub fn build_recipes() {
     let mut item_csv = csv::Reader::from_path("data/Item.csv").unwrap();
@@ -112,124 +113,6 @@ pub fn build_recipes() {
         &unique_recipes.into_values().collect::<Vec<RecipeOutput>>(),
         "output/recipes.json",
     );
-}
-
-#[allow(dead_code)]
-#[derive(Debug, Deserialize)]
-struct RecipeRecord {
-    #[serde(rename = "#")]
-    id: u32,
-
-    #[serde(rename = "RecipeLevelTable")]
-    recipe_level: u32,
-
-    #[serde(rename = "Item{Result}")]
-    result_item_id: u32,
-
-    #[serde(rename = "DifficultyFactor")]
-    progress_factor: u32,
-
-    #[serde(rename = "QualityFactor")]
-    quality_factor: u32,
-
-    #[serde(rename = "DurabilityFactor")]
-    durability_factor: u32,
-
-    #[serde(rename = "RequiredCraftsmanship")]
-    required_craftsmanship: u32,
-
-    #[serde(rename = "RequiredControl")]
-    required_control: u32,
-
-    #[serde(rename = "CanHq")]
-    #[serde(deserialize_with = "bool_string")]
-    can_hq: bool,
-
-    #[serde(rename = "IsSpecializationRequired")]
-    #[serde(deserialize_with = "bool_string")]
-    is_spec: bool,
-
-    #[serde(rename = "IsExpert")]
-    #[serde(deserialize_with = "bool_string")]
-    is_expert: bool,
-}
-
-#[derive(Debug, Deserialize, PartialEq, Eq, Hash)]
-struct RecipeLevelRecord {
-    #[serde(rename = "#")]
-    recipe_level: u32,
-
-    #[serde(rename = "ClassJobLevel")]
-    job_level: u32,
-
-    #[serde(rename = "Stars")]
-    stars: u32,
-
-    #[serde(rename = "Durability")]
-    durability: u32,
-
-    #[serde(rename = "Difficulty")]
-    progress: u32,
-
-    #[serde(rename = "Quality")]
-    quality: u32,
-
-    #[serde(rename = "ProgressDivider")]
-    progress_divider: u32,
-
-    #[serde(rename = "QualityDivider")]
-    quality_divider: u32,
-
-    #[serde(rename = "ProgressModifier")]
-    progress_modifier: u32,
-
-    #[serde(rename = "QualityModifier")]
-    quality_modifier: u32,
-
-    #[serde(rename = "ConditionsFlag")]
-    conditions_flag: u32,
-}
-
-#[derive(Debug, Deserialize)]
-struct ItemRecord {
-    #[serde(rename = "#")]
-    id: u32,
-
-    #[serde(rename = "Name")]
-    name: String,
-
-    #[serde(rename = "Level{Item}")]
-    item_level: u32,
-
-    #[serde(rename = "Level{Equip}")]
-    equip_level: u32,
-}
-
-#[derive(Debug, Deserialize)]
-struct RecipeLookupRecord {
-    #[serde(rename = "CRP")]
-    crp: u32,
-
-    #[serde(rename = "BSM")]
-    bsm: u32,
-
-    #[serde(rename = "ARM")]
-    arm: u32,
-
-    #[serde(rename = "GSM")]
-    gsm: u32,
-
-    #[serde(rename = "LTW")]
-    ltw: u32,
-
-    #[serde(rename = "WVR")]
-    wvr: u32,
-
-    #[serde(rename = "ALC")]
-    alc: u32,
-
-    #[serde(rename = "CUL")]
-    cul: u32,
 }
 
 #[derive(Debug, Serialize)]
