@@ -111,7 +111,7 @@ pub struct ItemFoodRecord {
     pub param_2_hq_max: u32,
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Clone, Deserialize)]
 pub struct ItemRecord {
     #[serde(rename = "#")]
     pub id: u32,
@@ -127,6 +127,13 @@ pub struct ItemRecord {
 
     #[serde(rename = "ItemAction")]
     pub item_action: u32,
+
+    #[serde(rename = "CanBeHq")]
+    #[serde(deserialize_with = "bool_string")]
+    pub can_hq: bool,
+
+    #[serde(rename = "EquipSlotCategory")]
+    pub equip_slot_category: u32,
 }
 
 #[derive(Debug, Deserialize)]
@@ -166,6 +173,59 @@ pub struct RecipeRecord {
     #[serde(rename = "IsExpert")]
     #[serde(deserialize_with = "bool_string")]
     pub is_expert: bool,
+
+    #[serde(rename = "MaterialQualityFactor")]
+    pub material_quality_factor: u32,
+
+    #[serde(rename = "Item{Ingredient}[0]")]
+    pub item_0: i32,
+    #[serde(rename = "Amount{Ingredient}[0]")]
+    pub amount_0: u32,
+
+    #[serde(rename = "Item{Ingredient}[1]")]
+    pub item_1: i32,
+    #[serde(rename = "Amount{Ingredient}[1]")]
+    pub amount_1: u32,
+
+    #[serde(rename = "Item{Ingredient}[2]")]
+    pub item_2: i32,
+    #[serde(rename = "Amount{Ingredient}[2]")]
+    pub amount_2: u32,
+
+    #[serde(rename = "Item{Ingredient}[3]")]
+    pub item_3: i32,
+    #[serde(rename = "Amount{Ingredient}[3]")]
+    pub amount_3: u32,
+
+    #[serde(rename = "Item{Ingredient}[4]")]
+    pub item_4: i32,
+    #[serde(rename = "Amount{Ingredient}[4]")]
+    pub amount_4: u32,
+
+    #[serde(rename = "Item{Ingredient}[5]")]
+    pub item_5: i32,
+    #[serde(rename = "Amount{Ingredient}[5]")]
+    pub amount_5: u32,
+
+    #[serde(rename = "Item{Ingredient}[6]")]
+    pub item_6: i32,
+    #[serde(rename = "Amount{Ingredient}[6]")]
+    pub amount_6: u32,
+
+    #[serde(rename = "Item{Ingredient}[7]")]
+    pub item_7: i32,
+    #[serde(rename = "Amount{Ingredient}[7]")]
+    pub amount_7: u32,
+
+    #[serde(rename = "Item{Ingredient}[8]")]
+    pub item_8: i32,
+    #[serde(rename = "Amount{Ingredient}[8]")]
+    pub amount_8: u32,
+
+    #[serde(rename = "Item{Ingredient}[9]")]
+    pub item_9: i32,
+    #[serde(rename = "Amount{Ingredient}[9]")]
+    pub amount_9: u32,
 }
 
 #[derive(Debug, Deserialize, PartialEq, Eq, Hash)]

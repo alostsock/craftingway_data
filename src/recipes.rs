@@ -69,23 +69,80 @@ pub fn build_recipes() {
             .get(&recipe.recipe_level)
             .unwrap_or_else(|| panic!("no entry for recipe level {:?}", &recipe.recipe_level));
 
-        /// Calculate progress/quality/durability requirements with base values from
-        /// RecipeLevelTable.csv, and factors from Recipe.csv
-        fn calculate_requirement(base_value: u32, factor: u32) -> u32 {
+        fn apply_factor(base_value: u32, factor: u32) -> u32 {
             (f64::from(base_value * factor) / 100.0).floor() as u32
         }
 
-        let progress = calculate_requirement(recipe_level.progress, recipe.progress_factor);
-        let quality = calculate_requirement(recipe_level.quality, recipe.quality_factor);
-        let durability = calculate_requirement(recipe_level.durability, recipe.durability_factor);
+        // Calculate progress/quality/durability requirements with base values from
+        // RecipeLevelTable.csv, and factors from Recipe.csv
+        let progress = apply_factor(recipe_level.progress, recipe.progress_factor);
+        let quality = apply_factor(recipe_level.quality, recipe.quality_factor);
+        let durability = apply_factor(recipe_level.durability, recipe.durability_factor);
+
+        let raw_ingredients: Vec<(ItemRecord, u32)> = [
+            (recipe.item_0, recipe.amount_0),
+            (recipe.item_1, recipe.amount_1),
+            (recipe.item_2, recipe.amount_2),
+            (recipe.item_3, recipe.amount_3),
+            (recipe.item_4, recipe.amount_4),
+            (recipe.item_5, recipe.amount_5),
+            (recipe.item_6, recipe.amount_6),
+            (recipe.item_7, recipe.amount_7),
+            (recipe.item_8, recipe.amount_8),
+            (recipe.item_9, recipe.amount_9),
+        ]
+        .iter()
+        .filter_map(|(item_id, amount)| {
+            if *item_id <= 0 || *amount == 0 {
+                return None;
+            };
+            let Some(item) = items.get(&(*item_id as u32)) else {
+                return None;
+            };
+            Some((item.clone(), *amount))
+        })
+        .collect();
+
+        let total_ilvl: u32 = raw_ingredients
+            .iter()
+            .filter(|(item, _)| item.can_hq)
+            .map(|(item, amount)| item.item_level * amount)
+            .sum();
+
+        let total_material_quality = apply_factor(quality, recipe.material_quality_factor);
+
+        let hq_ingredients: Vec<Ingredient> = if recipe.can_hq {
+            raw_ingredients
+                .iter()
+                .filter(|(item, _)| item.can_hq)
+                .map(|(item, amount)| Ingredient {
+                    name: item.name.clone(),
+                    amount: *amount,
+                    quality: {
+                        let ilvl_ratio = item.item_level as f32 / total_ilvl as f32;
+                        (ilvl_ratio * total_material_quality as f32).floor() as u32
+                    },
+                })
+                .collect()
+        } else {
+            vec![]
+        };
 
         let mut recipe_output = RecipeOutput {
             name: item.name.clone(),
             jobs: jobs.iter().map(|&job| String::from(job)).collect(),
             job_level: recipe_level.job_level,
             recipe_level: recipe.recipe_level,
-            item_level: item.item_level,
-            equip_level: item.equip_level,
+            item_level: if item.equip_slot_category > 0 {
+                item.item_level
+            } else {
+                0
+            },
+            equip_level: if item.equip_slot_category > 0 {
+                item.equip_level
+            } else {
+                0
+            },
             stars: recipe_level.stars,
             progress,
             quality,
@@ -96,7 +153,8 @@ pub fn build_recipes() {
             quality_mod: recipe_level.quality_modifier,
             is_specialist: recipe.is_spec,
             is_expert: recipe.is_expert,
-            conditions_flag: recipe_level.conditions_flag,
+            can_hq: recipe.can_hq,
+            hq_ingredients,
         };
 
         let key = calculate_hash(&recipe_output);
@@ -133,7 +191,15 @@ struct RecipeOutput {
     quality_mod: u32,
     is_specialist: bool,
     is_expert: bool,
-    conditions_flag: u32,
+    can_hq: bool,
+    hq_ingredients: Vec<Ingredient>,
+}
+
+#[derive(Debug, Serialize)]
+struct Ingredient {
+    name: String,
+    amount: u32,
+    quality: u32,
 }
 
 // traits used to dedupe recipes across multiple jobs.
@@ -152,7 +218,6 @@ impl PartialEq for RecipeOutput {
             && self.durability == other.durability
             && self.is_specialist == other.is_specialist
             && self.is_expert == other.is_expert
-            && self.conditions_flag == other.conditions_flag
     }
 }
 
@@ -171,6 +236,5 @@ impl Hash for RecipeOutput {
         self.durability.hash(state);
         self.is_specialist.hash(state);
         self.is_expert.hash(state);
-        self.conditions_flag.hash(state);
     }
 }
