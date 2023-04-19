@@ -153,6 +153,7 @@ pub fn build_recipes() {
             quality_mod: recipe_level.quality_modifier,
             is_specialist: recipe.is_spec,
             is_expert: recipe.is_expert,
+            conditions_flag: recipe_level.conditions_flag,
             can_hq: recipe.can_hq,
             hq_ingredients,
         };
@@ -191,6 +192,7 @@ struct RecipeOutput {
     quality_mod: u32,
     is_specialist: bool,
     is_expert: bool,
+    conditions_flag: u32,
     can_hq: bool,
     hq_ingredients: Vec<Ingredient>,
 }
