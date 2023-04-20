@@ -79,7 +79,7 @@ pub fn build_recipes() {
         let quality = apply_factor(recipe_level.quality, recipe.quality_factor);
         let durability = apply_factor(recipe_level.durability, recipe.durability_factor);
 
-        let raw_ingredients: Vec<(ItemRecord, u32)> = [
+        let ingredients: Vec<Ingredient> = [
             (recipe.item_0, recipe.amount_0),
             (recipe.item_1, recipe.amount_1),
             (recipe.item_2, recipe.amount_2),
@@ -96,33 +96,18 @@ pub fn build_recipes() {
             if *item_id <= 0 || *amount == 0 {
                 return None;
             };
+
             let item_id = *item_id as u32;
             let item = items.get(&item_id).unwrap();
-            Some((item.clone(), *amount))
-        })
-        .collect();
 
-        let total_ilvl: u32 = raw_ingredients
-            .iter()
-            .filter(|(item, _)| item.can_hq)
-            .map(|(item, amount)| item.item_level * amount)
-            .sum();
-
-        let total_material_quality = apply_factor(quality, recipe.material_quality_factor);
-
-        let ingredients: Vec<Ingredient> = raw_ingredients
-            .iter()
-            .map(|(item, amount)| Ingredient {
+            Some(Ingredient {
                 name: item.name.clone(),
                 amount: *amount,
-                quality: if item.can_hq {
-                    let ilvl_ratio = item.item_level as f32 / total_ilvl as f32;
-                    (ilvl_ratio * total_material_quality as f32).floor() as u32
-                } else {
-                    0
-                },
+                item_level: item.item_level,
+                can_hq: item.can_hq,
             })
-            .collect();
+        })
+        .collect();
 
         let mut recipe_output = RecipeOutput {
             name: item.name.clone(),
@@ -151,6 +136,7 @@ pub fn build_recipes() {
             is_expert: recipe.is_expert,
             conditions_flag: recipe_level.conditions_flag,
             can_hq: recipe.can_hq,
+            material_quality: recipe.material_quality_factor,
             ingredients,
         };
 
@@ -190,6 +176,7 @@ struct RecipeOutput {
     is_expert: bool,
     conditions_flag: u32,
     can_hq: bool,
+    material_quality: u32,
     ingredients: Vec<Ingredient>,
 }
 
@@ -197,7 +184,8 @@ struct RecipeOutput {
 struct Ingredient {
     name: String,
     amount: u32,
-    quality: u32,
+    item_level: u32,
+    can_hq: bool,
 }
 
 // traits used to dedupe recipes across multiple jobs.
