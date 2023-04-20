@@ -96,9 +96,8 @@ pub fn build_recipes() {
             if *item_id <= 0 || *amount == 0 {
                 return None;
             };
-            let Some(item) = items.get(&(*item_id as u32)) else {
-                return None;
-            };
+            let item_id = *item_id as u32;
+            let item = items.get(&item_id).unwrap();
             Some((item.clone(), *amount))
         })
         .collect();
@@ -111,22 +110,19 @@ pub fn build_recipes() {
 
         let total_material_quality = apply_factor(quality, recipe.material_quality_factor);
 
-        let hq_ingredients: Vec<Ingredient> = if recipe.can_hq {
-            raw_ingredients
-                .iter()
-                .filter(|(item, _)| item.can_hq)
-                .map(|(item, amount)| Ingredient {
-                    name: item.name.clone(),
-                    amount: *amount,
-                    quality: {
-                        let ilvl_ratio = item.item_level as f32 / total_ilvl as f32;
-                        (ilvl_ratio * total_material_quality as f32).floor() as u32
-                    },
-                })
-                .collect()
-        } else {
-            vec![]
-        };
+        let ingredients: Vec<Ingredient> = raw_ingredients
+            .iter()
+            .map(|(item, amount)| Ingredient {
+                name: item.name.clone(),
+                amount: *amount,
+                quality: if item.can_hq {
+                    let ilvl_ratio = item.item_level as f32 / total_ilvl as f32;
+                    (ilvl_ratio * total_material_quality as f32).floor() as u32
+                } else {
+                    0
+                },
+            })
+            .collect();
 
         let mut recipe_output = RecipeOutput {
             name: item.name.clone(),
@@ -155,7 +151,7 @@ pub fn build_recipes() {
             is_expert: recipe.is_expert,
             conditions_flag: recipe_level.conditions_flag,
             can_hq: recipe.can_hq,
-            hq_ingredients,
+            ingredients,
         };
 
         let key = calculate_hash(&recipe_output);
@@ -194,7 +190,7 @@ struct RecipeOutput {
     is_expert: bool,
     conditions_flag: u32,
     can_hq: bool,
-    hq_ingredients: Vec<Ingredient>,
+    ingredients: Vec<Ingredient>,
 }
 
 #[derive(Debug, Serialize)]
