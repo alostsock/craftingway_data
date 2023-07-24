@@ -13,7 +13,7 @@ fn main() {
     println!("Building recipes.json...");
     build_recipes();
 
-    println!("Building consumables.json...");
+    println!("Building meals.json and potions.json...");
     build_consumables();
 
     let args: Vec<String> = std::env::args().collect();

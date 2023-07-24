@@ -1,4 +1,4 @@
-﻿#,Name,Description,Animation{Start},Animation{End},Icon,ClassJob,ClassJobCategory,ClassJobLevel,QuestRequirement,Specialist,,Cost,CRP,BSM,ARM,GSM,LTW,WVR,ALC,CUL
+#,Name,Description,Animation{Start},Animation{End},Icon,ClassJob,ClassJobCategory,ClassJobLevel,QuestRequirement,Specialist,,Cost,CRP,BSM,ARM,GSM,LTW,WVR,ALC,CUL
 100000,"","",0,0,0,0,0,0,0,False,0,0,0,0,0,0,0,0,0,0
 100001,"Basic Synthesis","Increases <UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>progress<UIGlow>01</UIGlow><UIForeground>01</UIForeground>.
 <UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>Efficiency:<UIGlow>01</UIGlow><UIForeground>01</UIForeground> <If(Equal(PlayerParameter(68),8))><If(GreaterThanOrEqualTo(PlayerParameter(69),31))>120<Else/>100</If><Else/>100</If>%
