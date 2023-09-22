@@ -20,10 +20,12 @@ const CONTROL_PARAM_ID: u32 = 71;
 const CP_PARAM_ID: u32 = 11;
 const VALID_PARAMS: &[u32] = &[CRAFTSMANSHIP_PARAM_ID, CONTROL_PARAM_ID, CP_PARAM_ID];
 
-pub fn build_consumables() {
+pub fn build_consumables() -> HashMap<u32, ItemRecord> {
     let mut item_csv = csv::Reader::from_path("data/Item.csv").unwrap();
     let mut item_action_csv = csv::Reader::from_path("data/ItemAction.csv").unwrap();
     let mut item_food_csv = csv::Reader::from_path("data/ItemFood.csv").unwrap();
+
+    let mut relevant_items = HashMap::new();
 
     let mut item_food_by_id = HashMap::new();
     for record in item_food_csv.deserialize::<ItemFoodRecord>() {
@@ -60,6 +62,8 @@ pub fn build_consumables() {
         let item = record.unwrap();
 
         if let Some(consumable) = consumable_by_item_action_id.get(&item.item_action) {
+            relevant_items.insert(item.id, item.clone());
+
             let Consumable {
                 is_potion,
                 item_food,
@@ -85,6 +89,8 @@ pub fn build_consumables() {
 
     write_json_file(&meals, "output/meals.json");
     write_json_file(&potions, "output/potions.json");
+
+    relevant_items
 }
 
 #[allow(clippy::type_complexity)]

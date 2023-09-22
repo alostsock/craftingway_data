@@ -6,15 +6,19 @@
 )]
 
 use craftingway_data::{
-    consumables::build_consumables, icons::build_icons, recipes::build_recipes,
+    consumables::build_consumables, icons::build_icons, recipes::build_recipes, translated_items::build_translated_items,
 };
 
 fn main() {
     println!("Building recipes.json...");
-    build_recipes();
+    let mut items = build_recipes();
 
     println!("Building meals.json and potions.json...");
-    build_consumables();
+    let consumable_items = build_consumables();
+    items.extend(consumable_items);
+
+    println!("Building item translation files...");
+    build_translated_items(items);
 
     let args: Vec<String> = std::env::args().collect();
     assert!(args.len() == 2, "Path for action icons wasn't provided");
