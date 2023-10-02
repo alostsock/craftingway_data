@@ -4,24 +4,20 @@ use std::path::Path;
 use walkdir::WalkDir;
 
 use crate::models::{ActionRecord, CraftActionRecord, StatusRecord};
-use crate::utils::write_json_file;
+use crate::utils::{read_csv_data, write_json_file};
 
 struct IconData {
     pub name: String,
     pub job: Option<String>,
 }
 
-pub fn build_icons(action_icons_path: &Path) {
+pub fn build_icons(action_icons_path: &Path) -> (Vec<String>, Vec<String>) {
     let icons_dir = Path::new("output/icon");
     if icons_dir.exists() {
         fs::remove_dir_all("output/icon").unwrap();
     }
     fs::create_dir_all("output/icon/action").unwrap();
     fs::create_dir_all("output/icon/status").unwrap();
-
-    let mut action_csv = csv::Reader::from_path("data/Action.csv").unwrap();
-    let mut craft_action_csv = csv::Reader::from_path("data/CraftAction.csv").unwrap();
-    let mut status_csv = csv::Reader::from_path("data/Status.csv").unwrap();
 
     // read in action icons
     let mut icons_by_id: HashMap<u32, IconData> = HashMap::new();
@@ -38,23 +34,17 @@ pub fn build_icons(action_icons_path: &Path) {
             .or_insert(IconData { name, job });
     };
 
-    for record in action_csv.deserialize::<ActionRecord>() {
-        let action = record.unwrap();
-
+    for action in read_csv_data::<ActionRecord>("data/Action.csv") {
         if action.action_category != 7 || action.class_job <= 0 || !action.is_player_action {
             continue;
         }
-
         record_icon(action.icon, action.name, job_string(action.class_job));
     }
 
-    for record in craft_action_csv.deserialize::<CraftActionRecord>() {
-        let craft_action = record.unwrap();
-
+    for craft_action in read_csv_data::<CraftActionRecord>("data/CraftAction.csv") {
         if craft_action.class_job <= 0 {
             continue;
         }
-
         record_icon(
             craft_action.icon,
             craft_action.name,
@@ -65,9 +55,7 @@ pub fn build_icons(action_icons_path: &Path) {
     // read in status icons
     let mut statuses_by_id: HashMap<u32, String> = HashMap::new();
 
-    for record in status_csv.deserialize::<StatusRecord>() {
-        let status = record.unwrap();
-
+    for status in read_csv_data::<StatusRecord>("data/Status.csv") {
         if status.category != 33 {
             continue;
         }
@@ -84,6 +72,7 @@ pub fn build_icons(action_icons_path: &Path) {
     }
 
     let mut action_output: Vec<String> = vec![];
+    let mut action_output_without_job: Vec<String> = vec![];
     let mut status_output: Vec<String> = vec![];
 
     // iterate through icon files and match them up with action data from above
@@ -115,20 +104,22 @@ pub fn build_icons(action_icons_path: &Path) {
             } else {
                 icon_data.name.clone()
             };
-            let filename = format!("{}.{}", action_name, ext);
+            let filename = format!("{action_name}.{ext}");
 
-            fs::copy(entry.path(), format!("output/icon/action/{}", filename))
+            fs::copy(entry.path(), format!("output/icon/action/{filename}"))
                 .unwrap_or_else(|_| panic!("error copying {:?}", entry.path()));
 
             action_output.push(action_name);
+
+            action_output_without_job.push(icon_data.name.clone());
         }
 
         // copy status icons
         if let Some(status_name) = statuses_by_id.get(&icon_id) {
             let ext = entry.path().extension().unwrap().to_string_lossy();
-            let filename = format!("{}.{}", status_name, ext);
+            let filename = format!("{status_name}.{ext}");
 
-            fs::copy(entry.path(), format!("output/icon/status/{}", filename))
+            fs::copy(entry.path(), format!("output/icon/status/{filename}"))
                 .unwrap_or_else(|_| panic!("error copying {:?}", entry.path()));
 
             status_output.push(String::from(status_name));
@@ -137,6 +128,8 @@ pub fn build_icons(action_icons_path: &Path) {
 
     write_json_file(&action_output, "output/actions.json");
     write_json_file(&status_output, "output/statuses.json");
+
+    (action_output_without_job, status_output)
 }
 
 fn job_string(class_job: i32) -> Option<String> {

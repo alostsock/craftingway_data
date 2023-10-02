@@ -3,19 +3,13 @@ use std::collections::HashMap;
 use std::hash::{Hash, Hasher};
 
 use crate::models::{ItemRecord, RecipeLevelRecord, RecipeLookupRecord, RecipeRecord};
-use crate::utils::{calculate_hash, write_json_file};
+use crate::utils::{calculate_hash, read_csv_data, write_json_file};
 
 pub fn build_recipes() -> HashMap<u32, String> {
-    let mut item_csv = csv::Reader::from_path("data/Item.csv").unwrap();
-    let mut recipe_lookup_csv = csv::Reader::from_path("data/RecipeLookup.csv").unwrap();
-    let mut recipe_level_csv = csv::Reader::from_path("data/RecipeLevelTable.csv").unwrap();
-    let mut recipe_csv = csv::Reader::from_path("data/Recipe.csv").unwrap();
-
     let mut relevant_items = HashMap::new();
 
     let mut items = HashMap::new();
-    for record in item_csv.deserialize::<ItemRecord>() {
-        let item = record.unwrap();
+    for item in read_csv_data::<ItemRecord>("data/Item.csv") {
         if item.name.trim().is_empty() {
             continue;
         }
@@ -23,9 +17,7 @@ pub fn build_recipes() -> HashMap<u32, String> {
     }
 
     let mut recipe_jobs: HashMap<u32, Vec<&str>> = HashMap::new();
-    for record in recipe_lookup_csv.deserialize::<RecipeLookupRecord>() {
-        let recipe_lookup = record.unwrap();
-
+    for recipe_lookup in read_csv_data::<RecipeLookupRecord>("data/RecipeLookup.csv") {
         for (recipe_id, job) in &vec![
             (recipe_lookup.crp, "CRP"),
             (recipe_lookup.bsm, "BSM"),
@@ -46,15 +38,12 @@ pub fn build_recipes() -> HashMap<u32, String> {
     }
 
     let mut recipe_levels = HashMap::new();
-    for record in recipe_level_csv.deserialize::<RecipeLevelRecord>() {
-        let recipe_level_record = record.unwrap();
+    for recipe_level_record in read_csv_data::<RecipeLevelRecord>("data/RecipeLevelTable.csv") {
         recipe_levels.insert(recipe_level_record.recipe_level, recipe_level_record);
     }
 
     let mut unique_recipes: HashMap<u64, RecipeOutput> = HashMap::new();
-    for record in recipe_csv.deserialize::<RecipeRecord>() {
-        let recipe = record.unwrap();
-
+    for recipe in read_csv_data::<RecipeRecord>("data/Recipe.csv") {
         if recipe.result_item_id == 0 {
             continue;
         }

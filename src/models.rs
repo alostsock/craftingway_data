@@ -4,6 +4,9 @@ use crate::utils::bool_string;
 
 #[derive(Debug, Deserialize, Clone)]
 pub struct ActionRecord {
+    #[serde(rename = "#")]
+    pub id: u32,
+
     #[serde(rename = "Name")]
     pub name: String,
 

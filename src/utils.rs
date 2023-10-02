@@ -3,6 +3,15 @@ use std::collections::hash_map::DefaultHasher;
 use std::fs::File;
 use std::hash::{Hash, Hasher};
 use std::io::prelude::Write;
+use std::path::Path;
+
+pub fn read_csv_data<RecordType>(path: impl AsRef<Path>) -> impl Iterator<Item = RecordType>
+where
+    RecordType: serde::de::DeserializeOwned,
+{
+    let reader = csv::Reader::from_path(path).unwrap();
+    reader.into_deserialize::<RecordType>().map(|r| r.unwrap())
+}
 
 pub fn bool_string<'de, D>(deserializer: D) -> Result<bool, D::Error>
 where

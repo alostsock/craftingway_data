@@ -2,7 +2,7 @@ use serde::Serialize;
 use std::collections::HashMap;
 
 use crate::models::{ItemActionRecord, ItemFoodRecord, ItemRecord};
-use crate::utils::write_json_file;
+use crate::utils::{read_csv_data, write_json_file};
 
 // https://github.com/xivapi/ffxiv-datamining/blob/35e435494317723be856f18fb3b48f526316656e/docs/ItemActions.md#845
 const ITEM_ACTION_BATTLE_FOOD_TYPE_ID: u32 = 844;
@@ -21,22 +21,15 @@ const CP_PARAM_ID: u32 = 11;
 const VALID_PARAMS: &[u32] = &[CRAFTSMANSHIP_PARAM_ID, CONTROL_PARAM_ID, CP_PARAM_ID];
 
 pub fn build_consumables() -> HashMap<u32, String> {
-    let mut item_csv = csv::Reader::from_path("data/Item.csv").unwrap();
-    let mut item_action_csv = csv::Reader::from_path("data/ItemAction.csv").unwrap();
-    let mut item_food_csv = csv::Reader::from_path("data/ItemFood.csv").unwrap();
-
     let mut relevant_items = HashMap::new();
 
     let mut item_food_by_id = HashMap::new();
-    for record in item_food_csv.deserialize::<ItemFoodRecord>() {
-        let item_food = record.unwrap();
+    for item_food in read_csv_data::<ItemFoodRecord>("data/ItemFood.csv") {
         item_food_by_id.insert(item_food.id, item_food);
     }
 
     let mut consumable_by_item_action_id = HashMap::new();
-    for record in item_action_csv.deserialize::<ItemActionRecord>() {
-        let item_action = record.unwrap();
-
+    for item_action in read_csv_data::<ItemActionRecord>("data/ItemAction.csv") {
         if !VALID_ITEM_ACTION_TYPE_IDS.contains(&item_action.type_id) {
             continue;
         }
@@ -58,9 +51,7 @@ pub fn build_consumables() -> HashMap<u32, String> {
 
     let mut meals = vec![];
     let mut potions = vec![];
-    for record in item_csv.deserialize::<ItemRecord>() {
-        let item = record.unwrap();
-
+    for item in read_csv_data::<ItemRecord>("data/Item.csv") {
         if let Some(consumable) = consumable_by_item_action_id.get(&item.item_action) {
             relevant_items.insert(item.id, item.name.clone());
 
