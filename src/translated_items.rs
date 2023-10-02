@@ -3,7 +3,8 @@ use std::collections::HashMap;
 use crate::{models::ItemRecord, utils::write_json_file};
 
 pub fn build_translated_items(english_items: HashMap<u32, ItemRecord>) {
-    for language in ["jp", "de", "fr"] {
+static LANGUAGES: [&str; 3] = ["jpn", "deu", "fra"];
+    for language in LANGUAGES {
         let mut translations = HashMap::new();
 
         let mut item_csv = csv::Reader::from_path(format!("data/{language}/Item.csv")).unwrap();
