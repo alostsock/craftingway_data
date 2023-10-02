@@ -11,14 +11,14 @@ use craftingway_data::{
 
 fn main() {
     println!("Building recipes.json...");
-    let mut items = build_recipes();
+    let mut item_names = build_recipes();
 
     println!("Building meals.json and potions.json...");
-    let consumable_items = build_consumables();
-    items.extend(consumable_items);
+    let consumable_item_names = build_consumables();
+    item_names.extend(consumable_item_names);
 
     println!("Building item translation files...");
-    build_translated_items(items);
+    build_translated_items(item_names);
 
     let args: Vec<String> = std::env::args().collect();
     assert!(args.len() == 2, "Path for action icons wasn't provided");

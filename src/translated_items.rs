@@ -2,8 +2,9 @@ use std::collections::HashMap;
 
 use crate::{models::ItemRecord, utils::write_json_file};
 
-pub fn build_translated_items(english_items: HashMap<u32, ItemRecord>) {
 static LANGUAGES: [&str; 3] = ["jpn", "deu", "fra"];
+
+pub fn build_translated_items(english_items: HashMap<u32, String>) {
     for language in LANGUAGES {
         let mut translations = HashMap::new();
 
@@ -19,12 +20,12 @@ static LANGUAGES: [&str; 3] = ["jpn", "deu", "fra"];
             non_english_items.insert(item.id, item);
         }
 
-        for (id, english_item) in &english_items {
+        for (id, english_item_name) in &english_items {
             let non_english_item = non_english_items
                 .get(id)
-                .unwrap_or_else(|| panic!("item not found for {language}: {}", english_item.name));
+                .unwrap_or_else(|| panic!("item not found for {language}: {}", english_item_name));
             translations.insert(
-                english_item.name.clone(),
+                english_item_name.clone(),
                 clean_item_name(non_english_item.name.clone()),
             );
         }

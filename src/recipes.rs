@@ -5,7 +5,7 @@ use std::hash::{Hash, Hasher};
 use crate::models::{ItemRecord, RecipeLevelRecord, RecipeLookupRecord, RecipeRecord};
 use crate::utils::{calculate_hash, write_json_file};
 
-pub fn build_recipes() -> HashMap<u32, ItemRecord> {
+pub fn build_recipes() -> HashMap<u32, String> {
     let mut item_csv = csv::Reader::from_path("data/Item.csv").unwrap();
     let mut recipe_lookup_csv = csv::Reader::from_path("data/RecipeLookup.csv").unwrap();
     let mut recipe_level_csv = csv::Reader::from_path("data/RecipeLevelTable.csv").unwrap();
@@ -63,7 +63,7 @@ pub fn build_recipes() -> HashMap<u32, ItemRecord> {
             .get(&recipe.result_item_id)
             .unwrap_or_else(|| panic!("no item value for item id {:?}", &recipe.result_item_id));
 
-        relevant_items.insert(item.id, item.clone());
+        relevant_items.insert(item.id, item.name.clone());
 
         let jobs = recipe_jobs
             .get(&recipe.id)
@@ -104,7 +104,7 @@ pub fn build_recipes() -> HashMap<u32, ItemRecord> {
             let item_id = *item_id as u32;
             let item = items.get(&item_id).unwrap();
 
-            relevant_items.insert(item.id, item.clone());
+            relevant_items.insert(item.id, item.name.clone());
 
             Some(Ingredient {
                 name: item.name.clone(),

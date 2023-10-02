@@ -20,7 +20,7 @@ const CONTROL_PARAM_ID: u32 = 71;
 const CP_PARAM_ID: u32 = 11;
 const VALID_PARAMS: &[u32] = &[CRAFTSMANSHIP_PARAM_ID, CONTROL_PARAM_ID, CP_PARAM_ID];
 
-pub fn build_consumables() -> HashMap<u32, ItemRecord> {
+pub fn build_consumables() -> HashMap<u32, String> {
     let mut item_csv = csv::Reader::from_path("data/Item.csv").unwrap();
     let mut item_action_csv = csv::Reader::from_path("data/ItemAction.csv").unwrap();
     let mut item_food_csv = csv::Reader::from_path("data/ItemFood.csv").unwrap();
@@ -62,7 +62,7 @@ pub fn build_consumables() -> HashMap<u32, ItemRecord> {
         let item = record.unwrap();
 
         if let Some(consumable) = consumable_by_item_action_id.get(&item.item_action) {
-            relevant_items.insert(item.id, item.clone());
+            relevant_items.insert(item.id, item.name.clone());
 
             let Consumable {
                 is_potion,
