@@ -80,6 +80,8 @@ pub fn build_icons(action_icons_path: &Path) -> (HashMap<u32, String>, HashMap<u
     let mut status_output: Vec<String> = vec![];
 
     // iterate through icon files and match them up with action data from above
+    let mut min_icon_id: u32 = 999_999;
+    let mut max_icon_id: u32 = 0;
     for entry in WalkDir::new(action_icons_path) {
         let entry = entry.unwrap();
 
@@ -114,6 +116,8 @@ pub fn build_icons(action_icons_path: &Path) -> (HashMap<u32, String>, HashMap<u
                 .unwrap_or_else(|_| panic!("error copying {:?}", entry.path()));
 
             action_output.push(action_name);
+            min_icon_id = min_icon_id.min(icon_id);
+            max_icon_id = max_icon_id.max(icon_id);
         }
 
         // copy status icons
@@ -125,8 +129,17 @@ pub fn build_icons(action_icons_path: &Path) -> (HashMap<u32, String>, HashMap<u
                 .unwrap_or_else(|_| panic!("error copying {:?}", entry.path()));
 
             status_output.push(String::from(status_name));
+            min_icon_id = min_icon_id.min(icon_id);
+            max_icon_id = max_icon_id.max(icon_id);
         }
     }
+
+    println!(
+        "Found {} icons in id range {} to {}",
+        action_output.len() + status_output.len(),
+        min_icon_id,
+        max_icon_id
+    );
 
     write_json_file(&action_output, "output/actions.json");
     write_json_file(&status_output, "output/statuses.json");
