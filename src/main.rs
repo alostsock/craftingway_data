@@ -29,8 +29,8 @@ fn main() {
     assert!(action_icons_path.exists(), "Invalid path for action icons");
 
     println!("Finding icons...");
-    let (action_names, _status_names) = build_icons(action_icons_path);
+    let (action_names, craft_action_names) = build_icons(action_icons_path);
 
     println!("Building action translation files...");
-    build_translated_actions(action_names);
+    build_translated_actions(action_names, craft_action_names);
 }

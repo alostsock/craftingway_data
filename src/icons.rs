@@ -11,13 +11,16 @@ struct IconData {
     pub job: Option<String>,
 }
 
-pub fn build_icons(action_icons_path: &Path) -> (Vec<String>, Vec<String>) {
+pub fn build_icons(action_icons_path: &Path) -> (HashMap<u32, String>, HashMap<u32, String>) {
     let icons_dir = Path::new("output/icon");
     if icons_dir.exists() {
         fs::remove_dir_all("output/icon").unwrap();
     }
     fs::create_dir_all("output/icon/action").unwrap();
     fs::create_dir_all("output/icon/status").unwrap();
+
+    let mut relevant_actions = HashMap::new();
+    let mut relevant_craft_actions = HashMap::new();
 
     // read in action icons
     let mut icons_by_id: HashMap<u32, IconData> = HashMap::new();
@@ -38,6 +41,7 @@ pub fn build_icons(action_icons_path: &Path) -> (Vec<String>, Vec<String>) {
         if action.action_category != 7 || action.class_job <= 0 || !action.is_player_action {
             continue;
         }
+        relevant_actions.insert(action.id, action.name.clone());
         record_icon(action.icon, action.name, job_string(action.class_job));
     }
 
@@ -45,6 +49,7 @@ pub fn build_icons(action_icons_path: &Path) -> (Vec<String>, Vec<String>) {
         if craft_action.class_job <= 0 {
             continue;
         }
+        relevant_craft_actions.insert(craft_action.id, craft_action.name.clone());
         record_icon(
             craft_action.icon,
             craft_action.name,
@@ -72,7 +77,6 @@ pub fn build_icons(action_icons_path: &Path) -> (Vec<String>, Vec<String>) {
     }
 
     let mut action_output: Vec<String> = vec![];
-    let mut action_output_without_job: Vec<String> = vec![];
     let mut status_output: Vec<String> = vec![];
 
     // iterate through icon files and match them up with action data from above
@@ -110,8 +114,6 @@ pub fn build_icons(action_icons_path: &Path) -> (Vec<String>, Vec<String>) {
                 .unwrap_or_else(|_| panic!("error copying {:?}", entry.path()));
 
             action_output.push(action_name);
-
-            action_output_without_job.push(icon_data.name.clone());
         }
 
         // copy status icons
@@ -129,7 +131,7 @@ pub fn build_icons(action_icons_path: &Path) -> (Vec<String>, Vec<String>) {
     write_json_file(&action_output, "output/actions.json");
     write_json_file(&status_output, "output/statuses.json");
 
-    (action_output_without_job, status_output)
+    (relevant_actions, relevant_craft_actions)
 }
 
 fn job_string(class_job: i32) -> Option<String> {
