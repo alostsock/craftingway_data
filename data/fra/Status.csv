@@ -3135,7 +3135,7 @@ Recevoir certaines attaques permet d'annuler l'effet sans subir lesdits dégâts
 3108,"Dosis eucrasique III","Des dégâts périodiques sont subis.",12962,0,0,181,2,17,0,False,False,False,False,False,False,False,False,False,0,0,False,True,100,0,True,0,False,5,False,0,0,0,False
 3109,"Diagnosis eucrasique","Insensible à un certain montant de dégâts.",12954,0,0,181,1,16,0,False,False,False,False,False,False,False,False,False,0,0,False,False,100,0,True,0,False,0,False,0,12,0,False
 3110,"Haima","Insensible à un certain montant de dégâts.",12958,0,0,181,1,16,0,False,False,False,False,False,False,False,False,False,0,0,False,False,100,0,True,0,False,0,False,0,12,0,False
-3111,"Haimatinon","Quand la barrière de Haima a absorbé son montant de dégâts, Haimatinon en applique une nouvelle en échange d'un degré. Haimatinon restaure des PV en fonction des degrés restants lorsqu'il prend fin.",17585,0,5,181,1,16,0,False,False,False,False,False,False,False,False,False,0,0,False,False,100,27,True,0,False,0,False,0,0,0,False
+3111,"Haimatinon","Quand la barrière de Haima a absorbé son montant de dégâts, Haimatinon en applique une nouvelle en échange d'un degré. Haimatinon restaure des PV en fonction des degrés restants lorsqu'il prend fin.",17585,0,4,181,1,16,0,False,False,False,False,False,False,False,False,False,0,0,False,False,100,27,True,0,False,0,False,0,0,0,False
 3112,"●ゾーエ","",12957,0,0,181,1,16,0,False,False,False,False,False,False,False,False,False,0,0,False,False,10,0,True,0,False,0,False,0,0,0,False
 3113,"Toxikon","Les dégâts reçus sont augmentés.",14908,0,0,181,2,17,0,False,False,False,False,False,False,False,False,False,0,0,False,False,10,0,True,0,False,0,False,0,0,0,False
 3114,"●トキシコンII","",0,0,0,181,2,17,0,False,False,False,False,False,False,False,False,False,0,0,False,False,10,0,True,0,False,0,False,0,0,0,False
@@ -3720,71 +3720,71 @@ Cet effet peut être cumulé 4 fois. Lorsque le degré maximum est atteint, l'ac
 3690,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3691,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3692,"Poison concentré","Des dégâts périodiques sont subis et l'effet des sorts de restauration des PV est réduit.",18581,0,8,1,2,17,0,False,False,False,False,False,False,False,False,False,50,0,False,False,5000,0,False,0,False,5,False,0,0,0,False
-3693,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3694,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3693,"Ça glisse","Le sol sous les pieds est glissant.",16759,76,0,1,2,17,0,False,False,False,False,False,False,False,True,True,100,0,False,False,0,0,False,0,False,0,False,0,7,0,False
+3694,"Fulguration","Tout déplacement a lieu dans la direction vers laquelle pointe le curseur tournoyant au-dessus de la tête.",15809,0,0,1,2,17,43,False,False,False,False,False,False,False,True,True,100,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3695,"Sceau de ruine<Indent/>: IV","La victime est marquée par un sceau de ruine. Glas est appliqué lorsque l'effet est cumulé.",19861,0,4,1,2,17,0,False,False,False,False,False,False,False,False,False,100,0,False,False,0,0,False,0,False,0,False,0,23,0,False
 3696,"Quadruple lien pandæmoniaque","La victime est quadruplement maudite, et subit des dégâts à la fin de l'effet.",14110,0,0,1,2,17,0,False,False,False,False,False,False,False,False,False,200,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3697,"Étreinte mortelle","Les mouvements sont bloqués, et des dégâts périodiques sont subis.",15564,0,0,1,2,17,0,True,False,True,False,False,False,False,True,True,0,0,False,False,500,0,False,0,False,1,False,0,0,0,False
-3698,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3699,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3700,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3701,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3702,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3703,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3704,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3698,"Contrainte mentale<Indent/>: avancer","Un ordre de mouvement est intimé par télépathie. À la fin de l'effet, le corps est contraint d'aller vers l'avant.",15774,0,0,1,2,17,629,False,False,False,False,False,False,False,False,False,200,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3699,"Contrainte mentale<Indent/>: reculer","Un ordre de mouvement est intimé par télépathie. À la fin de l'effet, le corps est contraint d'aller vers l'arrière.",15775,0,0,1,2,17,630,False,False,False,False,False,False,False,False,False,200,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3700,"Contrainte mentale<Indent/>: virage à gauche","Un ordre de mouvement est intimé par télépathie. À la fin de l'effet, le corps est contraint d'aller vers la gauche.",15776,0,0,1,2,17,631,False,False,False,False,False,False,False,False,False,200,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3701,"Contrainte mentale<Indent/>: virage à droite","Un ordre de mouvement est intimé par télépathie. À la fin de l'effet, le corps est contraint d'aller vers la droite.",15777,0,0,1,2,17,632,False,False,False,False,False,False,False,False,False,200,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3702,"Tournis","Le corps est in<SoftHyphen/>con<SoftHyphen/>trô<SoftHyphen/>la<SoftHyphen/>ble et se déplace en tournoyant.",15441,0,0,1,2,17,0,False,False,True,False,False,False,False,True,True,0,0,False,False,0,0,False,0,False,0,False,0,9,0,False
+3703,"Ça dérape","Le sol sous les pieds est glissant. Le saut et les actions sont impossibles à réaliser, les déplacements sont hors de contrôle.",16760,0,0,1,2,17,0,False,False,True,False,False,False,False,True,True,200,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3704,"Cristal en mains","Un cristal est transporté. Atteindre l'arrivée correspondante permet de marquer un point.",16208,0,0,1,1,16,0,False,False,False,False,False,False,False,True,True,200,0,False,False,0,0,True,0,False,0,False,0,0,0,False
 3705,"Brûlure du vent","Des dégâts périodiques de vent sont subis.",15526,89,0,1,2,17,0,False,False,False,False,False,False,False,True,True,100,0,False,False,10,0,False,0,False,6,False,0,0,0,False
 3706,"Brûlure du vent","Des dégâts périodiques de vent sont subis.",15526,89,0,1,2,17,0,False,False,False,False,False,False,False,False,False,100,0,False,False,10,0,False,0,False,6,False,0,0,0,False
 3707,"Bonus de dégâts magiques","Les dégâts magiques infligés sont augmentés.",15054,37,0,1,1,16,0,False,False,False,False,False,False,False,True,True,1,0,False,False,10,0,False,0,False,0,False,0,0,0,False
-3708,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3708,"Mode spectateur","Le mode spectateur est activé.",16761,0,0,1,1,16,0,False,False,False,False,False,False,False,True,True,240,0,False,False,0,0,True,0,False,0,True,3,0,0,False
 3709,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3710,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3711,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3712,"Souffle magique","Des dégâts périodiques neutres sont subis.",13553,0,0,1,2,17,0,False,False,False,False,False,False,True,False,False,10,0,False,False,100,0,False,0,False,5,False,0,0,0,False
 3713,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3714,"Marquage","Fait l'objet du marquage d'un prédateur.",15026,0,0,1,2,17,0,False,False,False,False,False,False,False,True,True,200,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3715,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3716,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3717,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3718,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3719,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3720,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3721,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3722,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3723,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3724,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3725,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3726,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3727,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3728,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3729,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3730,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3715,"Contrainte mentale<Indent/>: avancer","Un ordre de mouvement est intimé par télépathie. À la fin de l'effet, le corps est contraint d'aller vers l'avant.",15774,0,0,1,2,17,629,False,False,False,False,False,False,False,False,False,200,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3716,"Contrainte mentale<Indent/>: reculer","Un ordre de mouvement est intimé par télépathie. À la fin de l'effet, le corps est contraint d'aller vers l'arrière.",15775,0,0,1,2,17,630,False,False,False,False,False,False,False,False,False,200,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3717,"Contrainte mentale<Indent/>: virage à gauche","Un ordre de mouvement est intimé par télépathie. À la fin de l'effet, le corps est contraint d'aller vers la gauche.",15776,0,0,1,2,17,631,False,False,False,False,False,False,False,False,False,200,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3718,"Contrainte mentale<Indent/>: virage à droite","Un ordre de mouvement est intimé par télépathie. À la fin de l'effet, le corps est contraint d'aller vers la droite.",15777,0,0,1,2,17,632,False,False,False,False,False,False,False,False,False,200,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3719,"Marche forcée","Le corps obéit et avance dans la direction indiquée.",15773,67,0,1,2,17,0,True,False,True,False,False,False,False,False,False,200,0,False,False,0,0,False,0,False,0,False,0,9,0,False
+3720,"回転角2倍","次に発動する攻撃の回転角が2倍になる状態。",0,0,0,1,2,17,0,False,False,False,False,False,False,False,True,False,199,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3721,"Triple rotation","Le corps tournera trois fois plus que la normale lors de la prochaine attaque.",16748,0,0,1,2,17,0,False,False,False,False,False,False,False,True,False,199,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3722,"回転角4倍","次に発動する攻撃の回転角が4倍になる状態。",0,0,0,1,2,17,0,False,False,False,False,False,False,False,True,False,199,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3723,"Cible de bombardement","La victime est marquée. Déferlement symétrique se déclenche autour d'elle à la fin de l'effet.",16750,0,0,1,2,17,0,False,False,False,False,False,False,False,False,False,199,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3724,"Éthéroplasma diminutif α","L'éthéroplasma est activé, provoquant une grosse explosion à la fin de l'effet. Encaisser Mine arcanique permet de réduire les degrés de l'effet. S'annule s'il tombe à 0.",18391,0,4,1,2,17,0,False,False,False,False,False,False,False,False,False,199,0,False,False,0,27,False,0,False,0,False,0,0,0,False
+3725,"Éthéroplasma diminutif β","L'éthéroplasma est activé, provoquant une grosse explosion à la fin de l'effet. Encaisser les attaques de sphères ou de globes acaniques permet de réduire les degrés de l'effet. S'annule s'il tombe à 0.",18396,0,4,1,2,17,0,False,False,False,False,False,False,False,False,False,199,0,False,False,0,27,False,0,False,0,False,0,0,0,False
+3726,"Devant protégé","Seuls les points faibles de l'avant du corps restent inconnus de l'ennemi. Les attaques en provenance de l'arrière, de la droite et de la gauche infligent d'importants dégâts.",15369,0,0,1,2,17,0,False,False,False,False,False,False,False,True,True,100,0,False,False,0,28,True,0,False,0,False,0,0,0,False
+3727,"Dos protégé","Seuls les points faibles à l'arrière du corps restent inconnus de l'ennemi. Les attaques en provenance de l'avant, de la droite et de la gauche infligent d'importants dégâts.",15941,89,0,1,2,17,0,False,False,False,False,False,False,False,True,True,100,0,False,False,0,28,True,0,False,0,False,0,0,0,False
+3728,"Flanc droit protégé","Seuls les points faibles du côté droit restent inconnus de l'ennemi. Les attaques en provenance de l'avant, de la gauche et de l'arrière infligent d'importants dégâts.",15939,89,0,1,2,17,0,False,False,False,False,False,False,False,True,True,100,0,False,False,0,28,True,0,False,0,False,0,0,0,False
+3729,"Flanc gauche protégé","Seuls les points faibles du côté gauche restent inconnus de l'ennemi. Les attaques en provenance de l'avant, de la droite et de l'arrière infligent d'importants dégâts.",15940,89,0,1,2,17,0,False,False,False,False,False,False,False,True,True,100,0,False,False,0,28,True,0,False,0,False,0,0,0,False
+3730,"Au tapis","Impossible d'utiliser des actions ou de se déplacer.",15044,0,0,1,2,3,0,True,False,True,True,False,False,False,False,False,200,0,False,False,0,4,False,0,False,0,False,0,0,0,False
 3731,"Marque des Ténèbres","Si l'effet de la malédiction de l'Elfe noir est cumulé, réduit davantage le délai d'activation de Glas.",18307,0,2,1,2,17,0,False,False,False,False,False,False,False,True,False,200,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3732,"Hiéroglyphe de l'Érudit","Le corps est marqué par un hiéroglyphe. Inflige Entrave à la fin de l'effet.",14124,0,0,1,2,17,0,False,False,False,False,False,False,False,False,False,200,0,False,False,0,0,True,0,False,0,False,0,0,0,False
-3733,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3734,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3735,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3736,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3737,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3738,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3733,"Révérence<Indent/>: oiseau sacré","En pèlerinage face à la statue de l'oiseau sacré.",16751,0,0,1,1,16,0,False,False,False,False,False,False,False,False,False,100,0,False,False,0,28,False,0,False,0,False,0,0,0,False
+3734,"Révérence<Indent/>: tortue sacrée","En pèlerinage face à la statue de la tortue sacrée.",16752,0,0,1,1,16,0,False,False,False,False,False,False,False,False,False,100,0,False,False,0,28,False,0,False,0,False,0,0,0,False
+3735,"Révérence<Indent/>: baleine sacrée","En pèlerinage face à la statue de la baleine sacrée.",16753,0,0,1,1,16,0,False,False,False,False,False,False,False,False,False,100,0,False,False,0,28,False,0,False,0,False,0,0,0,False
+3736,"吸魔","大樹に描かれた魔紋に、エーテルを吸われている状態。",16754,0,0,1,2,17,0,False,False,False,False,False,False,False,True,True,100,0,False,False,10,0,False,0,False,6,False,0,0,0,False
+3737,"Marche forcée","Le corps obéit et avance dans la direction indiquée.",15773,67,0,1,2,17,0,True,False,True,False,False,False,False,False,False,200,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3738,"","",0,0,0,1,1,0,0,False,False,False,False,False,False,False,True,True,0,0,True,False,0,18,True,0,False,0,False,0,0,0,False
 3739,"Manipulation temporelle","Le temps de lancement du prochain sort est grandement réduit.",10454,0,0,1,1,16,0,False,False,False,False,False,False,False,True,True,200,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3740,"Éblouissement","Une lumière aveuglante diminue la précision.",15012,0,0,1,2,17,0,False,False,False,False,False,False,True,False,False,200,0,False,False,-200,0,False,0,False,0,False,0,0,0,False
 3741,"Pouvoir céleste","Le corps est empli de l'énergie accumulée dans les cieux.",15245,0,0,1,1,16,667,False,False,False,False,False,False,False,True,True,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3742,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3743,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3744,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3745,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3746,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3747,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3748,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3742,"Fléchette de tonnerre","La victime est marquée. Des flèches de foudre tombent autour d'elle à la fin de l'effet.",16757,0,0,1,2,17,634,False,False,False,False,False,False,False,False,False,200,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3743,"Filet de bulles<Indent/>: écho","Le corps est encerclé par des bulles magiques. Provoque l'effet Filet de bulles à la fin de l'effet.",16755,0,0,1,2,17,0,False,False,False,False,False,False,False,False,False,200,0,False,False,0,0,True,0,False,0,False,0,0,0,False
+3744,"Filet de bulles","Le corps est enveloppé dans une bulle. Il ne peut plus se déplacer et peut être emporté par le vent.",16756,0,0,1,2,17,0,False,True,False,False,False,False,False,True,True,200,0,False,False,0,12,True,0,False,0,False,0,0,0,False
+3745,"","",0,0,0,1,1,16,638,False,False,False,False,False,False,False,True,True,200,0,True,False,0,12,True,0,False,0,False,0,0,0,False
+3746,"Prison de bulles","Le corps est retenu prisonnier dans une bulle. Il ne peut plus effectuer aucun geste et peut être emporté par le vent.",15301,0,0,1,2,17,0,False,True,True,True,False,True,False,True,True,200,0,False,False,0,12,True,0,False,0,False,0,0,0,False
+3747,"Cible de pilonnage hydrique","Dans la mire d'un canon hydrique. Pilonnage hydrique se déclenche à la fin de l'effet.",15969,0,0,1,2,17,0,False,False,False,False,False,False,False,False,False,197,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3748,"Cible de barillet hydrique","Dans la mire d'un canon hydrique. Barillet hydrique se déclenche à la fin de l'effet.",15996,0,0,1,2,17,0,False,False,False,False,False,False,False,False,False,198,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3749,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3750,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3751,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3752,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3753,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3754,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3750,"拘束","行動できなくなった状態。",15545,0,0,1,2,17,71,True,False,True,True,False,False,False,False,False,200,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3751,"Barrière thérapeutique","Insensible à un certain montant de dégâts.",14988,0,0,1,1,16,0,False,False,False,False,False,False,False,False,False,199,0,False,False,100,0,True,0,False,0,False,0,12,0,False
+3752,"Baume oasien","Des PV sont récupérés périodiquement.",14989,137,0,1,1,16,0,False,False,False,False,False,False,False,False,False,198,0,False,False,100,0,True,0,False,0,False,0,0,0,False
+3753,"Baume oasien","Des PV sont récupérés périodiquement.",14989,137,0,1,1,16,0,False,False,False,False,False,False,False,True,True,198,0,False,False,100,0,True,0,False,0,False,0,0,0,False
+3754,"Vague caniculaire","Des dégâts périodiques sont subis.",14990,0,0,1,2,17,0,False,False,False,False,False,False,False,True,True,197,0,False,False,100,0,False,0,False,6,False,0,0,0,False
 3755,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3756,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3757,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3756,"Bonus de dégâts","Les dégâts infligés sont considérablement augmentés.",15519,0,0,1,1,16,639,False,False,False,False,False,False,False,True,True,200,0,False,False,10,0,False,0,False,0,False,0,0,0,False
+3757,"Vulnérabilité diminuée","Les dégâts reçus sont considérablement réduits.",15021,0,0,1,1,16,640,False,False,False,False,False,False,False,True,True,200,0,False,False,-90,0,False,0,False,0,False,0,0,0,False
 3758,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3759,"Psychose","Un puissant sentiment de désespoir suscite un trouble profond.",14115,0,0,1,1,16,646,False,False,False,False,False,False,False,True,True,200,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3760,"Big bang","Le corps entre en résonance avec l'énergie d'une explosion ténébreuse.",14116,0,0,1,1,16,650,False,False,False,False,False,False,False,True,True,200,0,False,False,0,0,False,0,False,0,False,0,0,0,False
@@ -3795,7 +3795,7 @@ Cet effet peut être cumulé 4 fois. Lorsque le degré maximum est atteint, l'ac
 3765,"Ténèbres rongeuses<Indent/>: Regard","Corruption ténébreuse. Provoque une attaque vers l'avant à la fin de l'effet.",14121,0,0,1,2,17,0,False,False,False,False,False,False,False,False,False,200,0,False,False,0,0,False,0,False,0,False,0,23,0,False
 3766,"Ténèbres rongeuses<Indent/>: Chaînes","Corruption ténébreuse. Une chaîne abyssale relie à autrui à la fin de l'effet.",14122,0,0,1,2,17,0,False,False,False,False,False,False,False,False,False,200,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3767,"Chaîne abyssale","La victime est enchaînée. Des dégâts périodiques sont subis.",14123,0,0,1,2,17,0,False,False,False,False,False,False,False,True,True,200,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3768,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3768,"Aire d'effet élargie","L'aire d'effet des actions est élargie.",17981,0,16,1,1,16,0,False,False,False,False,False,False,False,False,False,50,0,False,False,0,0,False,0,False,0,False,0,33,0,False
 3769,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3770,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3771,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
@@ -3803,33 +3803,33 @@ Cet effet peut être cumulé 4 fois. Lorsque le degré maximum est atteint, l'ac
 3773,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3774,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3775,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3776,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3776,"Entrave","Tout déplacement est impossible.",15003,3,0,1,2,12,5,False,True,False,False,False,False,True,False,False,100,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3777,"Œdème","Des dégâts périodiques d'eau sont subis.",15529,147,0,1,2,17,0,False,False,False,False,False,False,False,True,True,100,0,False,False,10,0,False,0,False,6,False,0,0,0,False
 3778,"Œdème","Des dégâts périodiques d'eau sont subis.",15529,147,0,1,2,17,0,False,False,False,False,False,False,False,False,False,100,0,False,False,10,0,False,0,False,6,False,0,0,0,False
 3779,"Électrocution","Des dégâts périodiques de foudre sont subis.",15528,0,0,1,2,17,0,False,False,False,False,False,False,True,False,False,10,0,False,True,10,0,False,0,False,5,False,0,0,0,False
-3780,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3780,"","",0,0,0,1,2,0,0,False,False,True,False,False,False,False,True,True,100,0,True,False,0,0,False,0,False,0,False,0,0,0,False
 3781,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3782,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3782,"Entrave","Tout déplacement est impossible.",15003,0,0,1,2,0,5,True,False,False,False,False,False,False,True,True,100,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3783,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3784,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3785,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3786,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3786,"Mature","L'organisme est arrivé à maturité.",15971,89,0,1,1,16,0,False,False,False,False,True,False,False,True,True,200,0,False,False,300,26,False,0,False,0,False,0,0,0,False
 3787,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3788,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3789,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3790,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3791,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3792,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3788,"Agglutination de bulles","Le corps est ceinturé par des bulles magiques. Provoque l'effet Entrave à la fin de l'effet.",16749,0,0,1,2,17,0,False,False,False,False,False,False,False,False,False,200,0,False,False,0,0,True,0,False,0,False,0,0,0,False
+3789,"Entrave","Tout déplacement est impossible.",15003,3,0,1,2,32,5,False,True,False,False,False,False,False,True,True,100,0,False,False,0,0,True,0,False,0,False,0,0,0,False
+3790,"Quintuple rotation","Le corps tournera cinq fois plus que la normale lors de la prochaine attaque.",16747,0,0,1,2,17,0,False,False,False,False,False,False,False,True,False,199,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3791,"Vitesse de déplacement accrue","La vitesse de déplacement est augmentée.",10101,0,0,1,1,0,0,False,False,False,False,False,False,False,True,True,0,0,False,False,0,18,False,0,False,0,False,0,0,0,False
+3792,"","",0,0,0,1,1,0,0,False,False,False,False,False,False,False,True,True,0,0,True,False,0,9,False,0,False,0,False,0,0,0,False
 3793,"Bombe à accélération","Une bombe sensible aux accélérations est fixée au corps. Tout mouvement à la fin de l'effet déclenchera le mécanisme d'explosion.",15727,0,0,1,2,17,24,False,False,False,False,False,False,False,False,False,200,0,False,False,6234,0,False,0,False,0,False,0,23,0,False
 3794,"Ténèbres rongeuses<Indent/>: Gravité","Corruption ténébreuse. Provoque une explosion massive à la fin de l'effet.",14119,0,0,1,2,17,0,False,False,False,False,False,False,False,False,False,200,0,False,False,0,0,False,0,False,0,False,0,23,0,False
 3795,"Dégâts continus","Des dégâts périodiques neutres sont subis.",15067,0,0,1,2,17,0,False,False,False,False,False,False,True,False,False,100,0,False,False,10,0,False,0,False,5,False,0,0,0,False
 3796,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3797,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3798,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3797,"Œdème","Des dégâts périodiques d'eau sont subis.",15529,89,0,1,2,17,0,False,False,False,False,False,False,False,True,True,100,0,False,False,10,0,False,0,False,6,False,0,0,0,False
+3798,"Œdème","Des dégâts périodiques d'eau sont subis.",15529,89,0,1,2,17,0,False,False,False,False,False,False,False,False,False,100,0,False,False,10,0,False,0,False,6,False,0,0,0,False
 3799,"Éclair ramifié","De l'énergie électrique est emmagasinée, qui sera libérée à la fin de l'effet et infligera des dégâts de foudre aux alentours.",15623,0,0,1,2,17,0,False,False,False,False,False,False,False,False,False,200,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3800,"","",0,0,0,1,1,0,0,False,False,False,False,False,False,False,True,True,0,0,True,False,0,28,True,0,False,0,False,0,0,0,False
 3801,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
-3802,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3802,"Bombe à accélération","Une bombe sensible aux accélérations est fixée au corps. Tout mouvement à la fin de l'effet déclenchera le mécanisme d'explosion.",15727,0,0,1,2,17,24,False,False,False,False,False,False,False,False,False,200,0,False,False,6234,0,False,0,False,0,False,0,23,0,False
 3803,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3804,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3805,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
@@ -3928,3 +3928,103 @@ Cet effet peut être cumulé 4 fois. Lorsque le degré maximum est atteint, l'ac
 3898,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3899,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
 3900,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3901,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3902,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3903,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3904,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3905,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3906,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3907,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3908,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3909,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3910,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3911,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3912,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3913,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3914,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3915,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3916,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3917,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3918,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3919,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3920,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3921,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3922,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3923,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3924,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3925,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3926,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3927,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3928,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3929,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3930,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3931,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3932,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3933,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3934,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3935,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3936,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3937,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3938,"Triple rotation","Le corps tournera trois fois plus que la normale lors de la prochaine attaque.",16748,0,0,1,1,16,0,False,False,False,False,False,False,False,True,False,199,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3939,"Quintuple rotation","Le corps tournera cinq fois plus que la normale lors de la prochaine attaque.",16747,0,0,1,1,16,0,False,False,False,False,False,False,False,True,False,199,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3940,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3941,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3942,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3943,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3944,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3945,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3946,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3947,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3948,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3949,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3950,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3951,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3952,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3953,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3954,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3955,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3956,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3957,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3958,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3959,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3960,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3961,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3962,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3963,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3964,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3965,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3966,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3967,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3968,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3969,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3970,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3971,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3972,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3973,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3974,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3975,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3976,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3977,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3978,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3979,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3980,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3981,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3982,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3983,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3984,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3985,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3986,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3987,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3988,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3989,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3990,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3991,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3992,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3993,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3994,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3995,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3996,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3997,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3998,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+3999,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
+4000,"","",0,0,0,0,0,0,0,False,False,False,False,False,False,False,False,False,0,0,False,False,0,0,False,0,False,0,False,0,0,0,False
