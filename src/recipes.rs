@@ -145,10 +145,9 @@ pub fn build_recipes() -> HashMap<u32, String> {
             .or_insert(recipe_output);
     }
 
-    write_json_file(
-        &unique_recipes.into_values().collect::<Vec<RecipeOutput>>(),
-        "output/recipes.json",
-    );
+    let mut recipe_output = unique_recipes.into_values().collect::<Vec<RecipeOutput>>();
+    recipe_output.sort_by(|a, b| a.name.cmp(&b.name));
+    write_json_file(&recipe_output, "output/recipes.json");
 
     relevant_items
 }

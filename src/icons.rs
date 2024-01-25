@@ -141,6 +141,8 @@ pub fn build_icons(action_icons_path: &Path) -> (HashMap<u32, String>, HashMap<u
         max_icon_id
     );
 
+    action_output.sort();
+    status_output.sort();
     write_json_file(&action_output, "output/actions.json");
     write_json_file(&status_output, "output/statuses.json");
 

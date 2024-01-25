@@ -78,6 +78,8 @@ pub fn build_consumables() -> HashMap<u32, String> {
         }
     }
 
+    meals.sort_by(|a, b| a.item_level.cmp(&b.item_level));
+    potions.sort_by(|a, b| a.item_level.cmp(&b.item_level));
     write_json_file(&meals, "output/meals.json");
     write_json_file(&potions, "output/potions.json");
 

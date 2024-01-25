@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::collections::{BTreeMap, HashMap};
 
 use crate::{
     models::{ActionRecord, CraftActionRecord, ItemRecord},
@@ -9,7 +9,7 @@ static LANGUAGES: [&str; 3] = ["jpn", "deu", "fra"];
 
 pub fn build_translated_items(english_items: HashMap<u32, String>) {
     for language in LANGUAGES {
-        let mut translations = HashMap::new();
+        let mut translations = BTreeMap::new();
 
         let mut non_english_items = HashMap::new();
 
@@ -46,7 +46,7 @@ pub fn build_translated_actions(
     english_craft_actions: HashMap<u32, String>,
 ) {
     for language in LANGUAGES {
-        let mut translations = HashMap::new();
+        let mut translations = BTreeMap::new();
 
         let mut non_english_actions = HashMap::new();
         for action in read_csv_data::<ActionRecord>(format!("data/{language}/Action.csv")) {
