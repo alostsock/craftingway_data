@@ -1,5 +1,7 @@
 #! /bin/bash
 
+set -euo pipefail
+
 OUTDIR="output_processed"
 
 rm -rf $OUTDIR

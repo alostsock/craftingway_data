@@ -219,16 +219,6 @@ pub struct RecipeRecord {
     pub item_7: i32,
     #[serde(rename = "Amount{Ingredient}[7]")]
     pub amount_7: u32,
-
-    #[serde(rename = "Item{Ingredient}[8]")]
-    pub item_8: i32,
-    #[serde(rename = "Amount{Ingredient}[8]")]
-    pub amount_8: u32,
-
-    #[serde(rename = "Item{Ingredient}[9]")]
-    pub item_9: i32,
-    #[serde(rename = "Amount{Ingredient}[9]")]
-    pub amount_9: u32,
 }
 
 #[derive(Debug, Deserialize, PartialEq, Eq, Hash)]

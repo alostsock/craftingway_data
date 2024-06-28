@@ -81,8 +81,6 @@ pub fn build_recipes() -> HashMap<u32, String> {
             (recipe.item_5, recipe.amount_5),
             (recipe.item_6, recipe.amount_6),
             (recipe.item_7, recipe.amount_7),
-            (recipe.item_8, recipe.amount_8),
-            (recipe.item_9, recipe.amount_9),
         ]
         .iter()
         .filter_map(|(item_id, amount)| {
