@@ -72,7 +72,7 @@ pub fn build_recipes() -> HashMap<u32, String> {
         let quality = apply_factor(recipe_level.quality, recipe.quality_factor);
         let durability = apply_factor(recipe_level.durability, recipe.durability_factor);
 
-        let ingredients: Vec<Ingredient> = [
+        let mut ingredients: Vec<Ingredient> = [
             (recipe.item_0, recipe.amount_0),
             (recipe.item_1, recipe.amount_1),
             (recipe.item_2, recipe.amount_2),
@@ -101,6 +101,8 @@ pub fn build_recipes() -> HashMap<u32, String> {
             })
         })
         .collect();
+
+        ingredients.sort_by_key(|item| item.name.clone());
 
         let mut recipe_output = RecipeOutput {
             name: item.name.clone(),
