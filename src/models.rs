@@ -139,6 +139,7 @@ pub struct ItemRecord {
     pub equip_slot_category: u32,
 }
 
+#[allow(dead_code)]
 #[derive(Debug, Deserialize)]
 pub struct RecipeRecord {
     #[serde(rename = "#")]

@@ -334,5 +334,12 @@
     "craftsmanship": null,
     "control": [4, 77, 5, 97],
     "cp": [21, 73, 26, 92]
+  },
+  {
+    "item_level": 720,
+    "name": "Ceviche",
+    "craftsmanship": [4, 120, 5, 150],
+    "control": null,
+    "cp": [21, 76, 26, 96]
   }
 ]
