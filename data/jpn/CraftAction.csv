@@ -1,4 +1,4 @@
-#,Name,Description,Animation{Start},Animation{End},Icon,ClassJob,ClassJobCategory,ClassJobLevel,QuestRequirement,Specialist,,Cost,CRP,BSM,ARM,GSM,LTW,WVR,ALC,CUL
+﻿#,Name,Description,Animation{Start},Animation{End},Icon,ClassJob,ClassJobCategory,ClassJobLevel,QuestRequirement,Specialist,,Cost,CRP,BSM,ARM,GSM,LTW,WVR,ALC,CUL
 100000,"","",0,0,0,0,0,0,0,False,0,0,0,0,0,0,0,0,0,0
 100001,"作業","耐久を消費して、作業を進める。
 効率：<If(Equal(PlayerParameter(68),8))><If(GreaterThanOrEqualTo(PlayerParameter(69),31))>120<Else/>100</If><Else/>100</If>
