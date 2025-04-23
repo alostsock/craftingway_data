@@ -54,9 +54,10 @@ pub fn build_recipes() -> HashMap<u32, String> {
 
         relevant_items.insert(item.id, item.name.clone());
 
-        let jobs = recipe_jobs
-            .get(&recipe.id)
-            .unwrap_or_else(|| panic!("no job value for recipe id {:?}", &recipe.id));
+        let Some(jobs) = recipe_jobs.get(&recipe.id) else {
+            println!("no job value for recipe id {:?}", &recipe.id);
+            continue;
+        };
 
         let recipe_level = recipe_levels
             .get(&recipe.recipe_level)
